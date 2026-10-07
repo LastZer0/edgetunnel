@@ -1,5 +1,5 @@
 # 🚀 edgetunnel 2.1
-![后台页面](./img.png)
+![صفحه پشتیبان](./img.png)
 
 [![Stars](https://img.shields.io/github/stars/cmliu/edgetunnel?style=flat-square&logo=github)](https://github.com/cmliu/edgetunnel/stargazers)
 [![Forks](https://img.shields.io/github/forks/cmliu/edgetunnel?style=flat-square&logo=github)](https://github.com/cmliu/edgetunnel/network/members)
@@ -11,193 +11,193 @@
 
 ---
 
-## 📖 项目简介
+## 📖 معرفی پروژه
 
-**edgetunnel** 是一个基于 CF Workers/Pages 平台的边缘计算隧道解密方案。它能够高效地处理网络流量，并提供强大的管理面板和灵活的节点配置能力。
+**edgetunnel** یک راه حل رمزگشایی تونل محاسباتی لبه بر اساس پلت فرم CF Workers/Pages است. ترافیک شبکه را به طور موثر مدیریت می کند و یک پنل مدیریت قدرتمند و قابلیت های پیکربندی گره انعطاف پذیر را ارائه می دهد.
 
-- 🖥️ **Demo 演示站点**：[https://EDT-Pages.github.io/admin](https://EDT-Pages.github.io/admin)
+- 🖥️ **سایت دمو**: [https://EDT-Pages.github.io/admin](https://EDT-Pages.github.io/admin)
 
-### ✨ 核心特性
+### ✨ ویژگی های اصلی
 
-- 🛡️ **协议支持**：支持 VLESS、Trojan、Shadowsocks 等主流协议，深度集成加密传输。
-- 📊 **管理面板**：内置可视化后台，支持实时配置修改、日志查看及流量统计。
-- 🛠️ **部署灵活**：完整适配 CF Workers 及 CF Pages (GitHub / 上传)。
-- 🔄 **订阅系统**：内置自动订阅生成及混淆转换，适配主流客户端（Clash, Sing-box, Surge 等）。
-- ⚡ **性能加速**：支持自定义 ProxyIP、SOCKS5/HTTP 链式代理及优选 API，优化网络延迟。
-- 🌐 **多台适配**：完美适配 Windows, Android, iOS, MacOS 及各种软路由固件。
+- 🛡️ **پشتیبانی از پروتکل**: از پروتکل های اصلی مانند VLESS، Trojan، Shadowsocks و غیره پشتیبانی می کند و انتقال رمزگذاری شده را عمیقاً یکپارچه می کند.
+- 📊 **پنل مدیریت**: پنل بصری داخلی با پشتیبانی از ویرایش بلادرنگ تنظیمات، مشاهده گزارش‌ها و آمار ترافیک.
+- 🛠️ **استقرار انعطاف پذیر**: به طور کامل با CF Workers و CF Pages (GitHub / Upload) سازگار است.
+- 🔄 **سیستم اشتراک**: تولید اشتراک خودکار داخلی و تبدیل مبهم، سازگار با مشتریان اصلی (کلش، Sing-box، Surge و غیره).
+- ⚡ **شتاب عملکرد**: از ProxyIP سفارشی، پروکسی زنجیره ای SOCKS5/HTTP و API ترجیحی برای بهینه سازی تأخیر شبکه پشتیبانی می کند.
+- 🌐 **آداپتورهای چندگانه**: کاملاً با Windows، Android، iOS، MacOS و سفت‌افزارهای مختلف مسیریابی نرم سازگار است.
 
 ---
 
-## 💡 快速部署
+## 💡 استقرار سریع
 >[!TIP]
-> 📖 **详尽图文教程**：[edgetunnel 部署指南](https://cmliussss.com/p/edt2/)
+> 📖 **آموزش تصویری جامع**: [راهنمای استقرار edgetunnel](https://cmliussss.com/p/edt2/)
 
 >[!WARNING]
-> ⚠️ **Error 1101问题**：[视频解析](https://www.youtube.com/watch?v=r4uVTEJptdE)
+> ⚠️ **مشکل خطای 1101**: [تجزیه و تحلیل ویدئو](https://www.youtube.com/watch?v=r4uVTEJptdE)
 
-### ⚙️ Workers 部署
+### ⚙️ استقرار Workers
 
 <details>
-<summary><code><strong>「 Workers 部署文字教程 」</strong></code></summary>
+<summary><code><strong>「آموزش متنی استقرار کارگران」</strong></code></summary>
 
-1. 部署 CF Worker：
-   - 在 CF Worker 控制台中创建一个新的 Worker。
-   - 将 [worker.js](https://github.com/cmliu/edgetunnel/blob/main/_worker.js) 的内容粘贴到 Worker 编辑器中。
-   - 在左侧的 `设置`选项卡中，选择 `变量` > `添加变量`。
-     变量名称填写**ADMIN**，值则为你的管理员密码，后点击 `保存`即可。
+1. مستقر CF Worker:
+- یک Worker جدید در کنسول CF Worker ایجاد کنید.
+- محتوای [worker.js](https://github.com/cmliu/edgetunnel/blob/main/_worker.js) را در ویرایشگر Worker جای‌گذاری کنید.
+- در تب 'تنظیمات' در سمت چپ، 'Variables' > 'Add Variable' را انتخاب کنید.
+- برای نام متغیر **ADMIN** را وارد کنید، مقدار را برابر رمز عبور مدیر قرار دهید و سپس روی «ذخیره» کلیک کنید.
 
-2. 绑定 KV 命名空间：
-   - 在 `绑定`选项卡中选择 `添加绑定 +` > `KV 命名空间` > `添加绑定`，然后选择一个已有的命名空间或创建一个新的命名空间进行绑定。
-   - `变量名称`填写**KV**，然后点击 `添加绑定`即可。
+2. فضای نام KV را متصل کنید:
+- در برگه «Bindings»، «Add Binding +» > «KV Namespace» > «Add Binding» را انتخاب کنید و سپس یک فضای نام موجود را انتخاب کنید یا یک فضای نام جدید برای اتصال ایجاد کنید.
+- **KV** را برای «نام متغیر» پر کنید، و سپس روی «افزودن صحافی» کلیک کنید.
 
-3. 给 Workers绑定 自定义域： 
-   - 在 workers控制台的 `触发器`选项卡，下方点击 `添加自定义域`。
-   - 填入你已转入 CF 域名解析服务的次级域名，例如:`vless.google.com`后 点击`添加自定义域`，等待证书生效即可。
+3. فیلدهای سفارشی را به Workers متصل کنید:
+- در برگه «Triggers» کنسول کارگران، روی «افزودن دامنه سفارشی» در زیر کلیک کنید.
+- نام دامنه ثانویه ای را که به سرویس حل نام دامنه CF منتقل کرده اید، وارد کنید، به عنوان مثال: `vless.google.com`، سپس روی «افزودن دامنه سفارشی» کلیک کنید و منتظر بمانید تا گواهینامه اعمال شود.
 
-4. 访问后台：
-   - 访问 `https://vless.google.com/admin` 输入管理员密码即可登录后台。
+4. دسترسی به باطن:
+- از «https://vless.google.com/admin» دیدن کنید و رمز عبور سرپرست را وارد کنید تا وارد قسمت پشتیبان شوید.
 
 </details>
 
-### 🛠 Pages 上传 部署方法 **最佳推荐!!!** [图文教程](https://cmliussss.com/p/edt2/)
+### 🛠 روش استقرار آپلود صفحات **بهترین توصیه!!!** [آموزش گرافیکی](https://cmliussss.com/p/edt2/)
 
 <details>
-<summary><code><strong>「 Pages 上传文件部署文字教程 」</strong></code></summary>
+<summary><code><strong>「آموزش متنی استقرار فایل آپلود صفحات」</strong></code></summary>
 
-1. 部署 CF Pages：
-   - 下载 [main.zip](https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip) 文件，并点上 Star !!!
-   - 在 CF Pages 控制台中选择 `上传资产`后，为你的项目取名后点击 `创建项目`，然后上传你下载好的 [main.zip](https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip) 文件后点击 `部署站点`。
-   - 部署完成后点击 `继续处理站点` 后，选择 `设置` > `环境变量` > **制作**为生产环境定义变量 > `添加变量`。
-     变量名称填写**ADMIN**，值则为你的管理员密码，后点击 `保存`即可。
-   - 返回 `部署` 选项卡，在右下角点击 `创建新部署` 后，重新上传 [main.zip](https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip) 文件后点击 `保存并部署` 即可。
+1. استقرار صفحات CF:
+- فایل [main.zip](https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip) را دانلود کنید و روی ستاره کلیک کنید!!!
+- پس از انتخاب «Upload Assets» در کنسول CF Pages، نامی به پروژه خود بدهید و روی «ایجاد پروژه» کلیک کنید، سپس فایل [main.zip](https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip) را که دانلود کرده‌اید آپلود کنید و روی «Deploy Site» کلیک کنید.
+- پس از تکمیل استقرار، روی «ادامه پردازش سایت» کلیک کنید و «تنظیمات» > «متغیرهای محیط» > **ساخت** را انتخاب کنید تا متغیرهایی را برای محیط تولید تعریف کنید > «افزودن متغیرها».
+- برای نام متغیر **ADMIN** را وارد کنید، مقدار را برابر رمز عبور مدیر قرار دهید و سپس روی «ذخیره» کلیک کنید.
+- به برگه «استقرار» برگردید، روی «ایجاد استقرار جدید» در گوشه سمت راست پایین کلیک کنید، فایل [main.zip](https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip) را دوباره آپلود کنید و روی «ذخیره و استقرار» کلیک کنید.
 
-2. 绑定 KV 命名空间：
-   - 在 `设置`选项卡中选择 `绑定` > `+ 添加` > `KV 命名空间`，然后选择一个已有的命名空间或创建一个新的命名空间进行绑定。
-   - `变量名称`填写**KV**，然后点击 `保存`后重试部署即可。
+2. فضای نام KV را متصل کنید:
+- در برگه «تنظیمات» «Binding» > «+Add» > «KV Namespace» را انتخاب کنید، سپس یک فضای نام موجود را انتخاب کنید یا یک فضای نام جدید برای اتصال ایجاد کنید.
+- **KV** را برای «نام متغیر» پر کنید، سپس روی «ذخیره» کلیک کنید و دوباره استقرار را امتحان کنید.
 
-3. 给 Pages绑定 CNAME自定义域：[视频教程](https://www.youtube.com/watch?v=LeT4jQUh8ok&t=851s)
-   - 在 Pages控制台的 `自定义域`选项卡，下方点击 `设置自定义域`。
-   - 填入你的自定义次级域名，注意不要使用你的根域名，例如：
-     您分配到的域名是 `fuck.cloudns.biz`，则添加自定义域填入 `lizi.fuck.cloudns.biz`即可；
-   - 按照 CF 的要求将返回你的域名DNS服务商，添加 该自定义域 `lizi`的 CNAME记录 `edgetunnel.pages.dev` 后，点击 `激活域`即可。
+3. دامنه سفارشی CNAME را به صفحات متصل کنید: [آموزش ویدیویی](https://www.youtube.com/watch?v=LeT4jQUh8ok&t=851s)
+- در تب 'Custom Domains' کنسول Pages، روی 'Set Custom Domains' در زیر کلیک کنید.
+- نام زیر دامنه سفارشی خود را وارد کنید، مراقب باشید از نام دامنه ریشه خود استفاده نکنید، به عنوان مثال:
+نام دامنه ای که به شما اختصاص داده شده "fuck.cloudns.biz" است، سپس یک دامنه سفارشی اضافه کنید و "lizi.fuck.cloudns.biz" را پر کنید.
+- با توجه به الزامات CF، نام دامنه شما ارائه دهنده خدمات DNS بازگردانده می شود. پس از افزودن رکورد CNAME «edgetunnel.pages.dev» دامنه سفارشی «lizi»، روی «فعال کردن دامنه» کلیک کنید.
    
-4. 访问后台：
-   - 访问 `https://lizi.fuck.cloudns.biz/admin` 输入管理员密码即可登录后台。
+4. دسترسی به باطن:
+- از «https://lizi.fuck.cloudns.biz/admin» دیدن کنید و رمز عبور مدیر را وارد کنید تا وارد باطن شوید.
 
 </details>
 
-### 🛠 Pages + GitHub 部署方法
+### 🛠 صفحات + روش استقرار GitHub
 
 <details>
-<summary><code><strong>「 Pages + GitHub 部署文字教程 」</strong></code></summary>
+<summary><code><strong>「آموزش متنی استقرار صفحات + GitHub」</strong></code></summary>
 
-1. 部署 CF Pages：
-   - 在 Github 上先 Fork 本项目，并点上 Star !!!
-   - 在 CF Pages 控制台中选择 `连接到 Git`后，选中 `edgetunnel`项目后点击 `开始设置`。
-   - 在 `设置构建和部署`页面下方，选择 `环境变量（高级）`后并 `添加变量`
-     变量名称填写**ADMIN**，值则为你的管理员密码，后点击 `保存并部署`即可。
+1. استقرار صفحات CF:
+- این پروژه را در Github فورک کنید و ستاره را بزنید!!!
+- پس از انتخاب 'Connect to Git' در کنسول CF Pages، پروژه 'edgetunnel' را انتخاب کرده و روی 'Start Settings' کلیک کنید.
+- در صفحه «تنظیم ساخت و توسعه»، «متغیرهای محیطی (پیشرفته)» و «افزودن متغیرها» را انتخاب کنید.
+- برای نام متغیر **ADMIN** را وارد کنید، مقدار را برابر رمز عبور مدیر قرار دهید و سپس روی «ذخیره و استقرار» کلیک کنید.
 
-2. 绑定 KV 命名空间：
-   - 在 `设置`选项卡中选择 `绑定` > `+ 添加` > `KV 命名空间`，然后选择一个已有的命名空间或创建一个新的命名空间进行绑定。
-   - `变量名称`填写**KV**，然后点击 `保存`后重试部署即可。
+2. فضای نام KV را متصل کنید:
+- در برگه «تنظیمات» «Binding» > «+Add» > «KV Namespace» را انتخاب کنید، سپس یک فضای نام موجود را انتخاب کنید یا یک فضای نام جدید برای اتصال ایجاد کنید.
+- **KV** را برای «نام متغیر» پر کنید، سپس روی «ذخیره» کلیک کنید و دوباره استقرار را امتحان کنید.
 
-3. 给 Pages绑定 CNAME自定义域：[视频教程](https://www.youtube.com/watch?v=LeT4jQUh8ok&t=851s)
-   - 在 Pages控制台的 `自定义域`选项卡，下方点击 `设置自定义域`。
-   - 填入你的自定义次级域名，注意不要使用你的根域名，例如：
-     您分配到的域名是 `fuck.cloudns.biz`，则添加自定义域填入 `lizi.fuck.cloudns.biz`即可；
-   - 按照 CF 的要求将返回你的域名DNS服务商，添加 该自定义域 `lizi`的 CNAME记录 `edgetunnel.pages.dev` 后，点击 `激活域`即可。
+3. دامنه سفارشی CNAME را به صفحات متصل کنید: [آموزش ویدیویی](https://www.youtube.com/watch?v=LeT4jQUh8ok&t=851s)
+- در تب 'Custom Domains' کنسول Pages، روی 'Set Custom Domains' در زیر کلیک کنید.
+- نام زیر دامنه سفارشی خود را وارد کنید، مراقب باشید از نام دامنه ریشه خود استفاده نکنید، به عنوان مثال:
+نام دامنه ای که به شما اختصاص داده شده "fuck.cloudns.biz" است، سپس یک دامنه سفارشی اضافه کنید و "lizi.fuck.cloudns.biz" را پر کنید.
+- با توجه به الزامات CF، نام دامنه شما ارائه دهنده خدمات DNS بازگردانده می شود. پس از افزودن رکورد CNAME «edgetunnel.pages.dev» دامنه سفارشی «lizi»، روی «فعال کردن دامنه» کلیک کنید.
 
-4. 访问后台：
-   - 访问 `https://lizi.fuck.cloudns.biz/admin` 输入管理员密码即可登录后台。
+4. دسترسی به باطن:
+- از «https://lizi.fuck.cloudns.biz/admin» دیدن کنید و رمز عبور مدیر را وارد کنید تا وارد باطن شوید.
 
 </details>
 
 ---
 
-## 🔑 环境变量说明
+## 🔑 شرح متغیر محیطی
 
-| 变量名 | 必填 | 示例 | 详细备注 |
+| نام متغیر | الزامی | نمونه | توضیحات |
 | :--- | :---: | :--- | :--- |
-| **ADMIN** | ✅ | `123456` | 后台管理面板登录密码 |
-| **KEY** | ❌ | `CMLiussss` | 快速订阅路径密钥，访问 `/CMLiussss` 即可快速获取节点 |
-| **UUID** | ❌ | `90cd4a77-141a-43c9-991b-08263cfe9c10` | 强制固定UUID，只支持**UUIDv4**标准格式 |
-| **PROXYIP** | ❌ | `proxyip.cmliussss.net:443` | 全局自定义反代 IP  |
-| **URL** | ❌ | `https://cloudflare-error-page-3th.pages.dev` | 默认主页伪装地址（可填写网页 URL 或 `1101`） |
-| **GO2SOCKS5** | ❌ | `blog.cmliussss.com`,`*.ip111.cn`,`*google.com` | 强制走 SOCKS5 的名单 (`*` 为全局，域名用逗号分隔) |
-| **DEBUG** | ❌ | `1`或`true` | **开发者模式**，默认**关闭**调试日志功能（console.log），设置`1`或`true`则**开启**调试日志功能 |
-| **OFF_LOG** | ❌ | `1`或`true` | 默认**开启**KV日志记录功能，设置`1`或`true`则**关闭**日志记录功能 |
-| **BEST_SUB** | ❌ | `1`或`true` | 默认**关闭**作为**优选订阅生成器**的功能，设置`1`或`true`则**开启**该功能 |
-| **PRELOAD_RACE_DIAL** | ❌ | `1`或`true` | 默认**关闭**作为**预加载竞速拨号**的功能，设置`1`或`true`则**开启**该功能 |
-| **TCP_CONCURRENT_DIAL**   | ❌ | `2` | **TCP 并发拨号数**，默认值为`2`；设置后不再根据中国移动网络自动降为单路 |
-| **PROXY_CONCURRENT_DIAL** | ❌ | `1` | **反代并发拨号数**，默认值为`1`；数值越高连接速度越快，但 IP 切换也越频繁 |
+| **ADMIN** | ✅ | `123456` | رمز ورود به پنل مدیریت |
+| **KEY** | ❌ | `CMLiussss` | کلید مسیر اشتراک سریع؛ با مراجعه به `/CMLiussss` گره‌ها را دریافت کنید |
+| **UUID** | ❌ | `90cd4a77-141a-43c9-991b-08263cfe9c10` | UUID ثابت اجباری، فقط فرمت استاندارد **UUIDv4** |
+| **PROXYIP** | ❌ | `proxyip.cmliussss.net:443` | نشانی IP سفارشی پروکسی معکوس سراسری |
+| **URL** | ❌ | `https://cloudflare-error-page-3th.pages.dev` | آدرس پنهان صفحه اصلی پیش‌فرض (می‌تواند نشانی وب صفحه وب یا '1101' را پر کند) |
+| **GO2SOCKS5** | ❌ | `blog.cmliussss.com`,`*.ip111.cn`,`*google.com` | فهرست اجباری SOCKS5 (`*` جهانی است، نام دامنه با کاما از هم جدا می شود) |
+| **DEBUG** | ❌ | `1` یا `true` | **حالت توسعه‌دهنده**؛ ثبت گزارش اشکال‌زدایی (`console.log`) به‌طور پیش‌فرض غیرفعال است و با `1` یا `true` فعال می‌شود |
+| **OFF_LOG** | ❌ | `1` یا `true` | ثبت گزارش در KV به‌طور پیش‌فرض فعال است و با `1` یا `true` غیرفعال می‌شود |
+| **BEST_SUB** | ❌ | `1` یا `true` | قابلیت **تولیدکننده اشتراک بهینه** به‌طور پیش‌فرض غیرفعال است و با `1` یا `true` فعال می‌شود |
+| **PRELOAD_RACE_DIAL** | ❌ | `1` یا `true` | قابلیت **شماره‌گیری رقابتی پیش‌بارگذاری‌شده** به‌طور پیش‌فرض غیرفعال است و با `1` یا `true` فعال می‌شود |
+| **TCP_CONCURRENT_DIAL** | ❌ | `2` | **شماره شماره گیری همزمان TCP**، مقدار پیش فرض '2' است. پس از تنظیم، دیگر به طور خودکار به یک کانال با توجه به شبکه موبایل چین کاهش نمی یابد |
+| **PROXY_CONCURRENT_DIAL** | ❌ | `1` | **تعداد شماره گیری همزمان**، مقدار پیش فرض '1' است. هر چه این مقدار بیشتر باشد، سرعت اتصال سریعتر است، اما سوئیچینگ IP مکرر |
 
 ---
 
-## 🔧 高级实用技巧
-如需修改 **订阅地址里的TOKEN** 和 **用于节点验证的UUID** ，可通过修改变量
-1. 修改`ADMIN`或`KEY`变量的值，可以随机修改 **订阅地址里的TOKEN** 和 **用于节点验证的UUID**
-2. 设置`UUID`变量可以强制固定 **订阅地址里的TOKEN** 和 **用于节点验证的UUID**，注意必须是**UUIDv4**标准格式，否则会导致节点无法使用。
+## 🔧 مهارت های عملی پیشرفته
+اگر نیاز به تغییر **TOKEN** در آدرس اشتراک و **UUID** مورد استفاده برای تأیید گره دارید، می‌توانید متغیرها را تغییر دهید.
+1. مقدار متغیر «ADMIN» یا «KEY» را تغییر دهید، می‌توانید به صورت تصادفی **TOKEN** را در آدرس اشتراک و **UUID مورد استفاده برای تأیید گره** را تغییر دهید.
+2. تنظیم متغیر «UUID» می‌تواند اجباراً **TOKEN** را در آدرس اشتراک و **UUID** مورد استفاده برای تأیید گره را اصلاح کند. توجه داشته باشید که باید در فرمت استاندارد **UUIDv4** باشد، در غیر این صورت گره غیر قابل استفاده خواهد بود.
 
-本工具支持通过 **PATH路径** 动态切换底层代理方案：
+این ابزار از سوئیچینگ پویا راه حل پروکسی زیربنایی از طریق **مسیر PATH** پشتیبانی می کند:
 
-- 指定 `PROXYIP` 案例
+- مورد «PROXYIP» را مشخص کنید
    ```url
    /proxyip=proxyip.cmliussss.net
    /?proxyip=proxyip.cmliussss.net
    ```
 
-- 指定 `SOCKS5` 案例
+- مورد «SOCKS5» را مشخص کنید
    ```url
    /socks5=user:password@127.0.0.1:1080
    /?socks5=user:password@127.0.0.1:1080
-   /socks://dXNlcjpwYXNzd29yZA==@127.0.0.1:1080 (默认激活全局SOCKS5)
-   /socks5://user:password@127.0.0.1:1080 (默认激活全局SOCKS5)
+/socks://dXNlcjpwYXNzd29yZA==@127.0.0.1:1080 (SOCKS5 جهانی به طور پیش فرض فعال است)
+/socks5://user:password@127.0.0.1:1080 (SOCKS5 جهانی به طور پیش فرض فعال است)
    ```
 
-- 指定 `HTTP代理` 案例
+- مورد «پراکسی HTTP» را مشخص کنید
    ```url
    /http=user:password@127.0.0.1:1080
-   /http://user:password@127.0.0.1:8080 (默认激活全局SOCKS5)
+/http://user:password@127.0.0.1:8080 (global SOCKS5 به طور پیش فرض فعال است)
    ```
 
-- 指定 `Trojan fallback` 案例（由于使用场景为自建对接, 仅 Trojan 入站，fallback 服务需为同密码、非 WebSocket、非 TLS. 此时 UDP 透传给 fallback, 性能优秀, 功能完整）
+- مورد «تروجان بازگشتی» را مشخص کنید (از آنجایی که سناریوی استفاده از اتصال خود ساخته است، فقط Trojan ورودی است، سرویس بازگشتی باید همان رمز عبور، غیر WebSocket و غیر TLS باشد. در این زمان، UDP به طور شفاف به بازگشتی منتقل می‌شود، با عملکرد عالی و عملکردهای کامل)
    ```url
    /trojan=1.1.1.1:1234
    ```
 
 ---
 
-## 💻 客户端适配情况
+## 💻 وضعیت سازگاری مشتری
 
-| 平台 | 推荐客户端 |
+| پلت فرم | مشتری پیشنهادی |
 | :--- | :--- |
 | **Windows** | [v2rayN](https://github.com/2dust/v2rayN/releases)、[Hiddify](https://github.com/hiddify/hiddify-app/releases)、[FlClash](https://github.com/chen08209/FlClash/releases)、[mihomo-party](https://github.com/mihomo-party-org/clash-party/releases)、[Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev/releases)、[Clashmi](https://github.com/KaringX/clashmi/releases)、[FlyClash](https://github.com/GtxFury/FlyClash/releases)、[Karing](https://github.com/KaringX/karing/releases)、[Bettbox](https://github.com/appshubcc/Bettbox/releases) |
 | **Android** | [v2rayNG](https://github.com/2dust/v2rayNG/releases)、[ClashMetaForAndroid](https://github.com/MetaCubeX/ClashMetaForAndroid/releases/)、[FlClash](https://github.com/chen08209/FlClash/releases)、[Clashmi](https://github.com/KaringX/clashmi/releases)、[Hiddify](https://github.com/hiddify/hiddify-app/releases)、[NekoBox](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)、[FlyClash](https://github.com/GtxFury/FlyClash/releases)、[Karing](https://github.com/KaringX/karing/releases)、[Bettbox](https://github.com/appshubcc/Bettbox/releases) |
 | **iOS** | Surge、Shadowrocket、Stash、[Hiddify](https://github.com/hiddify/hiddify-app/releases)、Loon、Egern、[Clashmi](https://clashmi.app/download)、[Karing](https://karing.app/)、Quantumult X |
 | **macOS** | [FlClash](https://github.com/chen08209/FlClash/releases)、[mihomo-party](https://github.com/mihomo-party-org/clash-party/releases)、[Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev/releases)、Surge、[Clashmi](https://clashmi.app/download)、[Karing](https://karing.app/)、[FlyClash](https://github.com/GtxFury/FlyClash/releases) |
-| **鸿蒙** | [ClashBox](https://github.com/xiaobaigroup/ClashBox/releases) |
+| **HarmonyOS** | [ClashBox](https://github.com/xiaobaigroup/ClashBox/releases) |
 ---
 
-## ⭐ 项目热度
+## ⭐محبوبیت پروژه
 
 ![Stargazers over time](https://github.com/cmliu/cmliu/blob/main/star/edgetunnel.svg)
 
 ---
 
-## 🙏 特别鸣谢
-### 💖 赞助支持 - 提供云服务器维持[订阅转换服务](https://sub.cmliussss.net/)
+## 🙏 با تشکر ویژه
+### 💖 حمایت مالی — ارائه نگهداری سرور ابری [سرویس تبدیل اشتراک](https://sub.cmliussss.net/)
 - [Yuusei Network](https://yuusei.io/)
 - [VMRack](https://www.vmrack.net?ref_code=5Zk7eNhbgL7)
 
-### 🛠 开源代码引用
+### 🛠 مرجع کد منبع باز
 - [zizifn/edgetunnel](https://github.com/zizifn/edgetunnel)
 - [3Kmfi6HP/EDtunnel](https://github.com/6Kmfi6HP/EDtunnel)
 - [SHIJS1999/cloudflare-worker-vless-ip](https://github.com/SHIJS1999/cloudflare-worker-vless-ip)
 - [Stanley-baby](https://github.com/Stanley-baby)
 - [ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config)
-- [股神](https://t.me/CF_NAT/38889)
+- [Stock God](https://t.me/CF_NAT/38889)
 - [Workers/Pages Metrics](https://t.me/zhetengsha/3382)
-- [白嫖哥](https://t.me/bestcfipas)
+- [برادر فاحشه بای](https://t.me/bestcfipas)
 - [Mingyu](https://github.com/ymyuuu/workers-vless)
 - [ToiCF/CF-Workers-HTTPS](https://github.com/ToiCF/CF-Workers-HTTPS)
 - [ToiCF/CF-Workers-TURN](https://github.com/ToiCF/CF-Workers-TURN)
@@ -211,14 +211,14 @@
 
 ---
 
-## ⚠️ 免责声明
+## ⚠️ سلب مسئولیت
 
-1. 本项目（"edgetunnel"）仅供**教育、科学研究及个人安全测试**之目的。
-2. 使用者在下载或使用本项目代码时，必须严格遵守所在地区的法律法规。
-3. 作者 **cmliu** 对任何滥用本项目代码导致的行为或后果均不承担任何责任。
-4. 本项目不对因使用代码引起的任何直接或间接损害负责。
-5. 建议在测试完成后 24 小时内删除本项目相关部署。
+1. این پروژه ("edgetunnel") فقط برای اهداف **آموزش، تحقیقات علمی و تست ایمنی شخصی** است.
+2. کاربران هنگام دانلود یا استفاده از کد این پروژه باید قوانین و مقررات منطقه خود را به شدت رعایت کنند.
+3. نویسنده **cmliu** مسئولیتی در قبال اعمال یا عواقب ناشی از سوء استفاده از این کد پروژه ندارد.
+4. این پروژه هیچ گونه مسئولیتی در قبال خسارات مستقیم یا غیر مستقیم ناشی از استفاده از کد ندارد.
+5. توصیه می شود استقرار مربوط به این پروژه ظرف 24 ساعت پس از اتمام تست حذف شود.
 
 ---
 
-**如果您觉得项目对您有帮助，请给一个 Star 🌟，这是对我最大的鼓励！**
+**اگر فکر می کنید این پروژه برای شما مفید است، لطفا یک ستاره بدهید 🌟، این بزرگترین تشویق من است! **
