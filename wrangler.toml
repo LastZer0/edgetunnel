@@ -2,5 +2,3 @@ name = "doge"
 main = "_worker.js"
 compatibility_date = "2026-10-07"
 keep_vars = true
-[[kv_namespaces]]binding = "KV"
-id = "f6ec39e72d634ee89253d402373fc941"
