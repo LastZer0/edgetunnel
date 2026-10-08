@@ -1,4 +1,6 @@
-name = "edge"
+name = "wild-mountain-a80c
+
+"
 main = "_worker.js"
 compatibility_date = "2026-10-07"
 keep_vars = true
